@@ -1,0 +1,17 @@
+<%= simple_form_for @picture, html: { multipart: true } do |p| %>
+  <% if @picture.errors.any? %>
+    <div id="errors">
+      <p>@picture.errors.count Prevented this picture from saving</p> 
+      <ul>
+        <% @picture.errors.full_messages.each do |msg| %>
+          <li>msg</li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="panel">
+      <%= p.input :title, input_html: { class: ''}%>
+      <%= p.input :description %>
+    </div>
+    <%= p.button :submit, class:"button radius small" %>
+<% end %>
