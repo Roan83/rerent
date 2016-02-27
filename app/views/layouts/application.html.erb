@@ -12,25 +12,30 @@
   </head>
 
   <body>
-      <div class="large-12">
-          <div class="large-4 columns">
-            <div class="left">
+
+    <div class="large-12 navbar-main">
+          <div class="medium-4 columns">
+            <div class="left" style="padding-top: 0.5rem">
               <%= link_to "Location Ile de Ré", root_path %>
             </div>
           </div>
           <% if user_signed_in? %>
-          <div class="large-8 columns">
-            <div class="right">
-              <%= link_to "Add Picture", new_picture_path, class: 'button secondary radius tiny' %>
-              <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'button radius tiny' %>
+          <div class="medium-8 columns right" style="padding-top: 0.35rem;">
+            <div class="text-right">
+              <%= link_to "Add Picture", new_picture_path, class: 'button radius tiny user_action' %>
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'button radius tiny user_action' %>
             </div>
           </div>
           <% else %>
-            <%= link_to "Sign Up", new_user_registration_path, class: 'button radius tiny' %>
-            <%= link_to "Sign In", new_user_session_path, class: 'button radius tiny' %>
-            <% end %>
-      </div>
-    <div class="larger-12 columns">
+            <div class="medium-8 columns right" style="padding-top: 0.35rem">
+              <div class="text-right">
+                <%= link_to "Sign Up", new_user_registration_path, class: 'button radius tiny user_action' %>
+                <%= link_to "Sign In", new_user_session_path, class: 'button radius tiny user_action' %>
+              </div>
+            </div>
+          <% end %>
+    </div>
+    <div>
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, class: "alert" %>
       <% end %>
@@ -38,5 +43,3 @@
     </div>
   </body>
 </html>
-
-

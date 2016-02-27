@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require_self
+//= require foundation_and_overrides
+
  *= require foundation_and_overrides
 
  */
@@ -24,42 +26,14 @@
 }
 
 $red: #DB6161;
-
+$white: #ffffff;
 body {
-  background: rgb(235, 238, 243);
-}
+  background-color: #cccccc;
 
-.main_content {
-  padding: 0 0 50px 0;
-}
-
-.alert {
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-  border-radius: 5px;
-  @include box-shadow;
-  background: white;
-  font-weight: bold;
-}
-
-.navbar {
-  margin-bottom: 50px;
-  @include box-shadow;
-  border: none;
-  .navbar-brand {
-    text-transform: uppercase;
-    letter-spacing: -1px;
-    font-weight: bold;
-    font-size: 25px;
-    a {
-      color: $red;
-    }
-  }
 }
 
 .picture {
-  background: white;
+  background: #7B868C;
   border-radius: 5px;
   margin-bottom: 40px;
   @include box-shadow;
@@ -85,53 +59,37 @@ body {
     font-weight: normal;
     line-height: 1.5;
     a {
-      color: $red;
+      color: $white;
     }
   }
 }
 
-#picture_top {
-  margin-bottom: 50px;
+.navbar-main {
+  background-color: #7B868C;
+  height: 2.65rem;
 }
 
-#picture_info {
-  background: white;
-  @include box-shadow;
-  min-height: 360px;
-  border-radius: 5px;
-  padding: 2em 8%;
+a {
+  color: $white;
 }
 
-.picture_image {
-  max-width: 100%;
-  border-radius: 5px;
-  @include box-shadow;
+
+.login-box {
+  background: #7B868C;
+  border: 1px solid #ddd; 
+  margin: 100px 0;
+  padding: 20px 20px 0 20px;
+  border-radius: 1rem
 }
 
-#picture_info {
-  h1 {
-    font-size: 36px;
-    font-weight: normal;
-    color: $red;
-  }
-  .description {
-    color: #8A8A8A;
-    font-size: 20px;
-  }
+.simple_form label {
+  color: $white;
 }
 
-.form-inline {
-  margin-top: 15px;
-}
-.form-input {
-  width: 65% !important;
-  float: left;
-}
-.form-button {
-  float: left;
-  width: 30% !important;
-  margin-left: 5%;
-}
-.add-button {
-  margin-top: 25px;
+.user_action {
+  border:solid 0.15rem;
+  border-radius: 0.5rem;
+  color: $white;
+  background-color: #7B868C;
+
 }
