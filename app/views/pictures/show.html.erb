@@ -6,8 +6,13 @@
   <div class="medium-8 columns">
     <h1> <%= @picture.title %></h1>
     <p><%= @picture.description %></p>
-    <%= link_to "Back", root_path, class: "button secondary radius tiny" %>
-    <%= link_to "Edit", edit_picture_path, class: "button radius tiny" %>
-    <%= link_to "Delete", picture_path, method: :delete,data: { confirm: "Are you sure ?"}, class: "button radius tiny" %>
+    <p>Submitted by <%= @picture.user.email %></p>
+    <% if user_signed_in? %>
+      <p>
+        <%= link_to "Back", root_path, class: "button secondary radius tiny" %>
+        <%= link_to "Edit", edit_picture_path, class: "button radius tiny" %>
+        <%= link_to "Delete", picture_path, method: :delete,data: { confirm: "Are you sure ?"}, class: "button radius tiny" %>
+      </p>
+    <% end %>
   </div>
 </div>

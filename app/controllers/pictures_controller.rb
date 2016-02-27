@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
   before_action :find_picture, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except:[:index,:show]
   def index
     @picture = Picture.all
   end
@@ -9,11 +10,11 @@ class PicturesController < ApplicationController
   end
 
   def new
-    @picture = Picture.new
+    @picture = current_user.pictures.build
   end
 
   def create
-    @picture = Picture.new(picture_params)
+    @picture = current_user.pictures.build(picture_params)
 
     if @picture.save
       redirect_to @picture, notice: "Successfully added new picture"

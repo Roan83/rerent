@@ -36,6 +36,8 @@ gem 'foundation', '~> 1.0', '>= 1.0.4'
 gem 'foundation-rails'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'paperclip', '~> 4.3', '>= 4.3.5'
+gem 'devise', '~> 3.5', '>= 3.5.6'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

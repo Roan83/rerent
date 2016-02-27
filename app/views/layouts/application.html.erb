@@ -18,12 +18,17 @@
               <%= link_to "Location Ile de Ré", root_path %>
             </div>
           </div>
+          <% if user_signed_in? %>
           <div class="large-8 columns">
             <div class="right">
               <%= link_to "Add Picture", new_picture_path, class: 'button secondary radius tiny' %>
-              <%= link_to "Sign Out", new_picture_path, class: 'button radius tiny' %>
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'button radius tiny' %>
             </div>
           </div>
+          <% else %>
+            <%= link_to "Sign Up", new_user_registration_path, class: 'button radius tiny' %>
+            <%= link_to "Sign In", new_user_session_path, class: 'button radius tiny' %>
+            <% end %>
       </div>
     <div class="larger-12 columns">
       <% flash.each do |name, msg| %>
