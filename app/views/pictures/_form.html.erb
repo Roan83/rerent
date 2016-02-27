@@ -9,9 +9,26 @@
       </ul>
     </div>
   <% end %>
-    <div class="panel">
-      <%= p.input :title, input_html: { class: ''}%>
-      <%= p.input :description %>
+    <div class="row">
+      
+      <div class="small-6 columns">
+        <div class="row">
+          <div class="small-8 columns"> 
+            <%= p.input :title, input_html: { class:"input" } %>
+            <%= p.input :description, input_html: { class:"input" } %></div>
+            <%= p.input :image %>
+          </div>
+        </div>
+      </div>
+
+      <div class="small-6">
+        <div class="row">
+            <div class="small-6 small-offset-4 columns">
+              <br>
+              <%= p.button :submit, class:"button success radius small" %>
+            </div>
+        </div>
+      </div>
+      
     </div>
-    <%= p.button :submit, class:"button radius small" %>
 <% end %>

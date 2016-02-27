@@ -1,4 +1,16 @@
-<% @picture.each do |picture| %>
-  <h2> <%= link_to  picture.title, picture %></h2>
-
+<% @picture.each_slice(4) do |pictures| %>
+  <div class="row">
+    <% pictures.each do |picture| %>
+      <div class="columns medium-4">
+        <div class="picture">
+          <div class="image_wrapper">
+            <%= link_to picture do %>
+              <%= image_tag picture.image.url(:thumb) %>
+              <h2> <%= link_to picture.title, picture %></h2>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 <% end %>

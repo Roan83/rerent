@@ -1,6 +1,13 @@
-<h1> <%= @picture.title %></h1>
-<p><%= @picture.description %></p>
 
-<%= link_to "Back", root_path, class: "button secondary radius tiny" %>
-<%= link_to "Edit", edit_picture_path, class: "button radius tiny" %>
-<%= link_to "Delete", picture_path, method: :delete,data: { confirm: "Are you sure ?"}, class: "button radius tiny" %>
+<div class="main-content">
+  <div class="medium-4 columns">
+    <%= image_tag @picture.image.url(:medium, class:"picture-image") %>
+  </div>
+  <div class="medium-8 columns">
+    <h1> <%= @picture.title %></h1>
+    <p><%= @picture.description %></p>
+    <%= link_to "Back", root_path, class: "button secondary radius tiny" %>
+    <%= link_to "Edit", edit_picture_path, class: "button radius tiny" %>
+    <%= link_to "Delete", picture_path, method: :delete,data: { confirm: "Are you sure ?"}, class: "button radius tiny" %>
+  </div>
+</div>
